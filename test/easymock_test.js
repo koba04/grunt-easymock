@@ -1,6 +1,7 @@
 'use strict';
 
 var grunt = require('grunt');
+var http = require('http');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,27 +23,32 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
+function get(url, done) {
+  http.get(url, function(res) {
+    var body = '';
+    res
+    .on('data', function(chunk) {
+      body += chunk;
+    })
+    .on('end', function() {
+      done(res, body);
+    });
+  });
+}
+
 exports.easymock = {
-  setUp: function(done) {
-    // setup here if necessary
-    done();
-  },
-  default_options: function(test) {
+  easymock_options: function(test) {
     test.expect(1);
-
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
-
-    test.done();
+    get('http://localhost:30000/', function(res, body) {
+      test.deepEqual(JSON.parse(body), {key:"api1"});
+      test.done();
+    });
   },
-  custom_options: function(test) {
+  easymock_config: function(test) {
     test.expect(1);
-
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
-
-    test.done();
+    get('http://localhost:30000/users/mock', function(res, body) {
+      test.deepEqual(JSON.parse(body), {name:"mock"});
+      test.done();
+    });
   },
 };

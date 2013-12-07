@@ -30,20 +30,23 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     easymock: {
-      default_options: {
+      api1: {
         options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
+          keepalive: false,
+          port: 30000,
+          log_enabled: true,
+          path: 'test/fixtures/api1',
+          config: {
+            routes: [
+              "/users/:id",
+            ],
+          },
         },
       },
-      custom_options: {
+      api2: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
+          port: 30010,
+          path: 'test/fixtures/api2',
         },
       },
     },

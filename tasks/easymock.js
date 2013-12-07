@@ -8,43 +8,25 @@
 
 'use strict';
 
+var MockServer = require('easymock').MockServer;
+
 module.exports = function(grunt) {
+  grunt.registerMultiTask('easymock', 'easymock server', function() {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    var done = this.async();
 
-  grunt.registerMultiTask('easymock', 'The best Grunt plugin ever.', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+    var options = this.options({});
+    grunt.verbose.writeln(JSON.stringify(options));
+    var keepalive = options.keepalive;
+    delete options.keepalive;
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+    // start easymock
+    var server = new MockServer(options);
+    grunt.log.writeln('Starting easymock server');
+    server.start();
 
-      // Handle options.
-      src += options.punctuation;
-
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
-
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
+    if (!keepalive) {
+      done();
+    }
   });
-
 };
