@@ -1,7 +1,7 @@
 {
   "name": "grunt-easymock",
-  "description": "The best Grunt plugin ever.",
-  "version": "0.1.0",
+  "description": "Start easy mock server",
+  "version": "0.0.1",
   "homepage": "https://github.com/koba04/grunt-easymock",
   "author": {
     "name": "koba04",
@@ -40,6 +40,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "easymock": "~0.2.5"
+    "easymock": "git://github.com/koba04/node-easymock.git#pass-to-config-as-object"
   }
 }
