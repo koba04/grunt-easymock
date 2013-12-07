@@ -1,6 +1,11 @@
 # grunt-easymock
 
-> The best Grunt plugin ever.
+[node-easymock](https://npmjs.org/package/easymock) for Grunt.
+
+## Note
+
+*This plugin is Experimental*.
+Because grunt-easymock use forked grunt-easymock. ([Pull Request](https://github.com/CyberAgent/node-easymock/pull/19))
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -17,19 +22,30 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-easymock');
 ```
 
-## The "easymock" task
+## Documentation
 
-### Overview
-In your project's Gruntfile, add a section named `easymock` to the data object passed into `grunt.initConfig()`.
+Add the task config to the grunt initConfig.
 
 ```js
 grunt.initConfig({
   easymock: {
-    options: {
-      // Task-specific options go here.
+    api1: {
+      options: {
+        port: 30000,
+        path: 'easymock/api1',
+        config: {
+          routes: [
+            "/users/:id",
+          ],
+        },
+      },
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+    api2: {
+      options: {
+        keepalive: true,
+        port: 30010,
+        path: 'easymock/api2',
+      },
     },
   },
 })
@@ -37,53 +53,25 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.keepalive
+-Type: `Boolean`
+-Default: `false`
 
-A string value that is used to do something with whatever.
+Keep the easymock server alive indefinitely. Note that if this option is enabled, any tasks specified after this task will never run. By default, once grunt's tasks have completed, the web server stops. This option changes that behavior.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.config
+-Type: `Object` or `String`
 
-A string value that is used to do something else with whatever else.
+Specifiy config.json's path or config.json's value(object).
 
-### Usage Examples
+#### other options
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  easymock: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  easymock: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
+Other optoins will be passed to easymock server.
+See easymock [document](https://npmjs.org/package/easymock)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+* 2013-12-08   v0.0.1  Initial release, not yet officially released.
