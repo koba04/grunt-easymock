@@ -75,3 +75,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
 * 2013-12-08   v0.0.1  Initial release, not yet officially released.
+* 2013-12-17   v0.0.2  Removed unnecessary files. use Cyberagent/node-easymock#develop
