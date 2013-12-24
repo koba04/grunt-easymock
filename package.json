@@ -40,6 +40,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "easymock": "git://github.com/CyberAgent/node-easymock.git#develop"
+    "easymock": "git://github.com/CyberAgent/node-easymock.git#d4761dd37f564426f39b8b26ee5aefc8983e321e"
   }
 }
