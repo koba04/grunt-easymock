@@ -1,7 +1,7 @@
 {
   "name": "grunt-easymock",
   "description": "Start easy mock server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/koba04/grunt-easymock",
   "author": {
     "name": "koba04",
@@ -37,7 +37,8 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "easymock"
   ],
   "dependencies": {
     "easymock": "git://github.com/CyberAgent/node-easymock.git#d4761dd37f564426f39b8b26ee5aefc8983e321e"
