@@ -5,7 +5,7 @@
 ## Note
 
 *This plugin is Experimental*.
-Because grunt-easymock use unreleased version. ([Commit](https://github.com/CyberAgent/node-easymock/commit/d4761dd37f564426f39b8b26ee5aefc8983e321e))
+Because grunt-easymock use forked version. ([pull request](https://github.com/CyberAgent/node-easymock/pull/20))
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -74,6 +74,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2013-12-25   v0.0.4  Dependency to koba04/node-easymock#fix-clone-config-object
 * 2013-12-24   v0.0.3  Dependency to Cyberagent/node-easymock#d4761dd37f564426f39b8b26ee5aefc8983e321e
 * 2013-12-17   v0.0.2  Removed unnecessary files. use Cyberagent/node-easymock#develop
 * 2013-12-08   v0.0.1  Initial release, not yet officially released.
