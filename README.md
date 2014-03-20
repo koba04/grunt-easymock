@@ -1,4 +1,4 @@
-# grunt-easymock
+# grunt-easymock [![Build Status](https://travis-ci.org/koba04/grunt-easymock.svg?branch=master)](https://travis-ci.org/koba04/grunt-easymock)
 
 [node-easymock](https://npmjs.org/package/easymock) for Grunt.
 
