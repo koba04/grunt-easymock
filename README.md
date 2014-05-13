@@ -2,13 +2,8 @@
 
 [node-easymock](https://npmjs.org/package/easymock) for Grunt.
 
-## Note
-
-*This plugin is Experimental*.
-Because grunt-easymock use forked version. ([pull request](https://github.com/CyberAgent/node-easymock/pull/20))
-
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `~0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -74,6 +69,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2014-05-14   v0.1.0  Updated Dependencies (easymock and grunt)
 * 2013-12-25   v0.0.4  Dependency to koba04/node-easymock#fix-clone-config-object
 * 2013-12-24   v0.0.3  Dependency to Cyberagent/node-easymock#d4761dd37f564426f39b8b26ee5aefc8983e321e
 * 2013-12-17   v0.0.2  Removed unnecessary files. use Cyberagent/node-easymock#develop
