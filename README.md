@@ -69,6 +69,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2016-04-08   v1.0.0  Updated peerDependencies
 * 2014-05-14   v0.1.0  Updated Dependencies (easymock and grunt)
 * 2013-12-25   v0.0.4  Dependency to koba04/node-easymock#fix-clone-config-object
 * 2013-12-24   v0.0.3  Dependency to Cyberagent/node-easymock#d4761dd37f564426f39b8b26ee5aefc8983e321e
